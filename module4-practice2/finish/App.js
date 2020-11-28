@@ -31,12 +31,6 @@ class App extends Component {
         this.setState({ order: newOrder });
     };
 
-    removeFromOrder = (goodsId) => {
-        this.setState({
-            order: this.state.order.filter((item) => item.id !== goodsId),
-        });
-    };
-
     render() {
         return (
             <div className="App">
@@ -46,10 +40,7 @@ class App extends Component {
                         setOrder={this.addToOrder}
                     />
 
-                    <BasketList
-                        order={this.state.order}
-                        removeOrder={this.removeFromOrder}
-                    />
+                    <BasketList order={this.state.order} />
                 </div>
             </div>
         );
